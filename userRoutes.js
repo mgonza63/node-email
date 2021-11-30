@@ -47,6 +47,7 @@ app.get("/users", async (req, res) => {
         sendEmailToUser(userEmail, userMessage, userDate);
       });
     } else {
+      // console.log('no messages for today')
     sendEmailToUser(process.env.EMAIL_USER, 'no messages due today', today);
     }
   } catch (error) {

@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
 const app = express();
-
+const dailyWorker = require('./bin/dailyWorker');
 const cors = require("cors");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
@@ -31,6 +31,7 @@ db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('connected to database'));
 
 app.use(userRouter);
+// app.use(dailyWorker);
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 

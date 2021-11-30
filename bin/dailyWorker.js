@@ -1,6 +1,12 @@
-const express = require("express");
-const app = express();
+// const axios = require("axios");
 
-app.get("/users", async (req, res) => {
-    console.log('worker working')
-});
+// axios.get("https://emailcapsule.herokuapp.com/users").then((res) => {
+//   console.log("Status Code:", res.status);
+// })
+// .catch(err => {
+//   console.log('Error: ', err.message);
+// });
+
+const https = require('https');
+
+https.get("https://emailcapsule.herokuapp.com/users");
