@@ -35,8 +35,8 @@ app.use(userRouter);
 app.use('/', express.static(path.join(__dirname, 'public')))
 
 
-app.listen(port, () => {
-  console.log(`Listening on port: ${process.env.PORT}`);
+app.listen(process.env.PORT || 8080, () => {
+  console.log(`Listening on port: ${process.env.PORT || 8080}`);
 });
 
 // const transporter = nodemailer.createTransport({
