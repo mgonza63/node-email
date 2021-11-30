@@ -6,7 +6,7 @@ const app = express();
 const cors = require("cors");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
-const port = 8080;
+const port = process.env.PORT || 8080;
 const path = require('path')
 require("dotenv").config();
 
@@ -35,8 +35,8 @@ app.use(userRouter);
 app.use('/', express.static(path.join(__dirname, 'public')))
 
 
-app.listen(process.env.PORT || 8080, () => {
-  console.log(`Listening on port: ${process.env.PORT || 8080}`);
+app.listen(port, () => {
+  console.log(`Listening on port: ${port}`);
 });
 
 // const transporter = nodemailer.createTransport({
