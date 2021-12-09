@@ -38,12 +38,12 @@ function sendEmailToUser(email, message, date) {
 }
 
 app.get("/users", async (req, res) => {
-  // const users = await userModel.find({});
+  const users = await userModel.find({});
   let today = DateTime.now().toISODate();
 
   try {
     // Insomnia test
-    // res.send(users);
+    res.send(users);
 
     const userMessageDue = await userModel.find({ numberOfDays: today }).exec();
     if (userMessageDue.length != 0) {
@@ -51,9 +51,17 @@ app.get("/users", async (req, res) => {
         const userEmail = userObject.email;
         const userMessage = userObject.message;
         const userDate = userObject.createdAt;
-        console.log(userObject);
+        const userId = userObject._id;
+
+        console.log(`send message to user ${userId}: ${userObject} `);
         sendEmailToUser(userEmail, userMessage, userDate);
+
+        // delete user object from db
+        userModel.deleteOne({ _id: userId }, function (err) {
+          if (err) return handleError(err);
+        });
       });
+
     } else {
       console.log("no messages for today");
       // sendEmailToUser(process.env.EMAIL_USER, 'no messages due today', today);
