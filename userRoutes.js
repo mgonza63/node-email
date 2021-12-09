@@ -52,7 +52,7 @@ app.get("/users", async (req, res) => {
         const userMessage = userObject.message;
         const userDate = userObject.createdAt;
         console.log(userObject);
-        // sendEmailToUser(userEmail, userMessage, userDate);
+        sendEmailToUser(userEmail, userMessage, userDate);
       });
     } else {
       console.log("no messages for today");
