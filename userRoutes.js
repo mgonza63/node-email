@@ -3,8 +3,15 @@ const userModel = require("./userModel");
 const app = express();
 const nodemailer = require("nodemailer");
 require("dotenv").config();
-
 const { DateTime } = require("luxon");
+
+const nodeCron = require("node-cron");
+
+
+// nodeCron.schedule('0 0 0 * * *', () => {
+//   This job will run every mdinight
+//   console.log(new Date().toLocaleTimeString());
+// });
 
 function sendEmailToUser(email, message, date) {
   const transporter = nodemailer.createTransport({
@@ -31,11 +38,12 @@ function sendEmailToUser(email, message, date) {
 }
 
 app.get("/users", async (req, res) => {
-  const users = await userModel.find({});
+  // const users = await userModel.find({});
   let today = DateTime.now().toISODate();
 
   try {
-    res.send(users);
+    // Insomnia test
+    // res.send(users);
 
     const userMessageDue = await userModel.find({ numberOfDays: today }).exec();
     if (userMessageDue.length != 0) {
@@ -44,11 +52,11 @@ app.get("/users", async (req, res) => {
         const userMessage = userObject.message;
         const userDate = userObject.createdAt;
         console.log(userObject);
-        sendEmailToUser(userEmail, userMessage, userDate);
+        // sendEmailToUser(userEmail, userMessage, userDate);
       });
     } else {
-      // console.log('no messages for today')
-    sendEmailToUser(process.env.EMAIL_USER, 'no messages due today', today);
+      console.log("no messages for today");
+      // sendEmailToUser(process.env.EMAIL_USER, 'no messages due today', today);
     }
   } catch (error) {
     res.status(500).send(error);
@@ -56,7 +64,6 @@ app.get("/users", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-
   const user = new userModel({
     email: req.body.email,
     message: req.body.message,
