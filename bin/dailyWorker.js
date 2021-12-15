@@ -1,5 +1,6 @@
 const userModel = require("../userModel");
 const nodemailer = require("nodemailer");
+const { DateTime } = require("luxon");
 
 // Dev
 const http = require("http");
@@ -28,7 +29,7 @@ function sendEmailToUser(email, message, date) {
     });
   }
 
-// http.get("http://localhost:8080/users", async (req, res)  => {
+// http.get("http://localhost:8080/users", async ()  => {
 //     const users = await userModel.find({});
 //     let today = DateTime.now().toISODate();
 
@@ -63,13 +64,10 @@ function sendEmailToUser(email, message, date) {
 
 // Production
 const https = require('https');
-const { DateTime } = require("luxon");
 
-
-https.get("https://emailcapsule.herokuapp.com/users"), async ()  => {
+https.get("https://emailcapsule.herokuapp.com/users", async ()  => {
     const users = await userModel.find({});
     let today = DateTime.now().toISODate();
-
 try {
     const userMessageDue = await userModel.find({ numberOfDays: today }).exec();
     console.log(userMessageDue);
@@ -97,4 +95,4 @@ try {
     console.log(error);
 
 }
-};
+});

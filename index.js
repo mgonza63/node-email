@@ -12,7 +12,6 @@ require("dotenv").config();
 
 const userRouter = require('./userRoutes');
 
-const userModel = require("./userModel");
 
 
 // Middlewares
@@ -41,4 +40,3 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
 });
-
