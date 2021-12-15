@@ -12,6 +12,8 @@ require("dotenv").config();
 
 const userRouter = require('./userRoutes');
 
+const userModel = require("./userModel");
+
 
 // Middlewares
 app.use(morgan("tiny"));
