@@ -82,9 +82,9 @@ try {
           sendEmailToUser(userEmail, userMessage, userDate);
   
           // delete user object from db
-          // userModel.deleteOne({ _id: userId }, function (err) {
-          //   if (err) return handleError(err);
-          // });
+          userModel.deleteOne({ _id: userId }, function (err) {
+            if (err) return handleError(err);
+          });
         });
   
       } else {

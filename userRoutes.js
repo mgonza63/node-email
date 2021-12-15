@@ -45,27 +45,6 @@ app.get("/users", async (req, res) => {
     // Insomnia test
     res.send(users);
     
-    const userMessageDue = await userModel.find({ numberOfDays: today }).exec();
-    // if (userMessageDue.length != 0) {
-    //   userMessageDue.forEach((userObject) => {
-    //     const userEmail = userObject.email;
-    //     const userMessage = userObject.message;
-    //     const userDate = userObject.createdAt;
-    //     const userId = userObject._id;
-
-    //     console.log(`send message to user ${userId}: ${userObject} `);
-    //     // sendEmailToUser(userEmail, userMessage, userDate);
-
-    //     // delete user object from db
-    //     // userModel.deleteOne({ _id: userId }, function (err) {
-    //     //   if (err) return handleError(err);
-    //     // });
-    //   });
-
-    // } else {
-    //   console.log("no messages for today");
-    //   // sendEmailToUser(process.env.EMAIL_USER, 'no messages due today', today);
-    // }
   } catch (error) {
     res.status(500).send(error);
   }
