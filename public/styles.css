@@ -128,13 +128,28 @@ footer {
     width: 100%;
   }
 }
+.spinner-container {
+    display: flex;
+    justify-content: center;
+
+}
+.spinner-container img {
+    width: 120px;
+
+}
+.spinner-container.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 
 #toast {
     visibility: hidden; /* Hidden by default. Visible on click */
     min-width: 250px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #333; /* Black background color */
-    color: #fff; /* White text color */
+    background-color: #533f44; /* Black background color */
+    border: #6df9d6 solid 2px;
+    color: #6df9d6; /* White text color */
     text-align: center; /* Centered text */
     border-radius: 2px; /* Rounded borders */
     padding: 16px; /* Padding */
@@ -144,16 +159,13 @@ footer {
     bottom: 30px; /* 30px from the bottom */
   }
   
-  /* Show the snackbar when clicking on a button (class added with JavaScript) */
   #toast.show {
     visibility: visible; /* Show the snackbar */
-    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-    However, delay the fade out process for 2.5 seconds */
+
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
   
-  /* Animations to fade the snackbar in and out */
   @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
