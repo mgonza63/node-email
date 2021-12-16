@@ -1,3 +1,15 @@
+@font-face {
+  src: url(./fonts/roc.ttf);
+  font-family: "Roc";
+}
+@font-face {
+  src: url(./fonts/lane.ttf);
+  font-family: "lane";
+}
+@font-face {
+  src: url(./fonts/lane-light.ttf);
+  font-family: "lane-light";
+}
 body {
   color: #6df9d6;
   background-color: #533f44;
@@ -33,7 +45,7 @@ main {
   margin-bottom: 6em;
 }
 .brand {
-  font-family: roc-grotesk-wide, sans-serif;
+  font-family: roc, sans-serif;
   font-weight: 600;
   font-style: normal;
   color: #533f44;
@@ -44,15 +56,19 @@ main {
 }
 .nav-item {
   color: #533f44;
-  font-family: roc-grotesk-wide, sans-serif;
+  font-family: roc, sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
 }
 h1,
 h2 {
-  font-family: roc-grotesk-wide, sans-serif;
+  font-family: roc, sans-serif;
   font-weight: 600;
   font-style: normal;
+}
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
 }
 .i:hover {
   font-style: italic;
@@ -69,10 +85,9 @@ h2 {
   display: block;
 }
 label {
-  font-family: park-lane, serif;
-  font-weight: 300;
+  font-family: lane-light, serif;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   display: block;
   margin-bottom: 0.5em;
   margin-top: 2em;
@@ -80,8 +95,7 @@ label {
 input,
 textarea {
   color: #6df9d6;
-  font-family: park-lane, serif;
-  font-weight: 300;
+  font-family: lane-light, serif;
   font-style: normal;
   font-size: 1rem;
   border-radius: 0px;
@@ -96,8 +110,8 @@ textarea {
 }
 
 button {
-  font-family: park-lane, serif;
-  font-style: italic;
+  font-family: lane-light, serif;
+  font-weight: bold;
   font-size: 1.2rem;
   margin-top: 2.5em;
   background: none;
@@ -105,8 +119,10 @@ button {
   border-radius: 3px;
   padding: 0.75em 1em 0.75em 0.7em;
   text-align: center;
-  background-color: #6df9d6;
-  border: 2px solid #6df9d6;
+  background-color: #11d463;
+  color: #533f44;
+
+  border: 2px solid #11d463;
   transition: all 200ms ease-out;
   cursor: pointer;
 }
@@ -121,7 +137,9 @@ footer {
 }
 @media screen and (min-width: 48em) {
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin-bottom: 1em;
+
   }
   input,
   textarea {
