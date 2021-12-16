@@ -2,7 +2,7 @@ const form = document.getElementById("form");
 const toast = document.getElementById("toast");
 const spinner = document.getElementById("spinner")
 
-const API_URL = 'http://localhost:8080/';
+const API_URL = 'https://emailcapsule.herokuapp.com//users';
 spinner.style.display = 'none';
 //   setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
 
