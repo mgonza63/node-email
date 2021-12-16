@@ -14,7 +14,7 @@ const userRouter = require('./userRoutes');
 
 // Middlewares
 app.use(morgan("tiny"));
-app.use(helmet());
+// app.use(helmet());
 
 app.use(cors());
 
