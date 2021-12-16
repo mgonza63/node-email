@@ -4,14 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/mbk0ijr.css">
     <title>Time Capsule Emailer</title>
   </head>
   <body>
-    <h1>Time Capsule Emailer yay</h1>
-    <form action="/" method="post">
+    <nav>
+      <div class="navbar">
+        <div class="brand">
+        <span class=""><a href="/">Email Capsule</a></span>
+      </div>
+      <div class="margin-left">
+      <span class="nav-item"><a href="about.html">About</a></span>
+      </div>
+      </div>
+    </nav>
+    <main class="container">
+    <h1>Send an Email to <span class="i"><u>future You</u></span></i></h1>
+    <form id="form" action="/" method="post">
       <div class="form-group">
         <label for="email">Your Email</label>
-        <input type="email" name="email" id="email" placeholder="email@email.com"  required/>
+        <input type="email" name="email" id="email" placeholder="email@email.com" required/>
       </div>
       <div class="form-group">
         <label for="message">Message for future you</label>
@@ -24,10 +37,29 @@
         ></textarea>
         <div class="form-group">
             <label for="numberOfDays">How many days from now?</label>
-            <input type="number" placeholder="7" name="numberOfDays" id="numberOfDays" required/>
+            <input type="number" min="1" placeholder="7" name="numberOfDays" id="numberOfDays" required/>
           </div>
       </div>
       <button type="submit">Submit future message</button>
     </form>
+    </main>
+    <!-- <section class="container section">
+      <h2>Expect an email like this one!</h2>
+      <button class="toast-button" onclick="toast()">Toast</button>
+
+    </section>
+    <footer>
+     <div class="footer">
+        <div class="brand">
+        <span class=""><a href="/">Email Capsule</a></span>
+      </div>
+      <div class="margin-left">
+      <span class="nav-item"><a href="about.html">About</a></span>
+      </div>
+      </div>
+    </footer>
+    <div id="toast">Some text some message..</div> -->
+
   </body>
+  <script src="main.js"></script>
 </html>

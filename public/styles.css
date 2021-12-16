@@ -1,0 +1,175 @@
+body {
+  color: #6df9d6;
+  background-color: #533f44;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+nav {
+  background-color: #6df9d6;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #533f44;
+  text-decoration: none;
+}
+a:hover {
+  font-style: italic;
+}
+img {
+  width: fit-content;
+  height: auto;
+}
+main {
+  min-height: 80vh;
+}
+.navbar {
+  max-width: 62em;
+  padding: 1.25em 1em;
+  margin: 0rem auto;
+  display: flex;
+  margin-bottom: 6em;
+}
+.brand {
+  font-family: roc-grotesk-wide, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #533f44;
+  font-size: 1.5rem;
+}
+.margin-left {
+  margin-left: auto;
+}
+.nav-item {
+  color: #533f44;
+  font-family: roc-grotesk-wide, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+h1,
+h2 {
+  font-family: roc-grotesk-wide, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.i:hover {
+  font-style: italic;
+}
+.section {
+  margin: 4rem 0 2rem 0;
+}
+.container {
+  max-width: 35.5em;
+  padding: 0 1em;
+  margin: 1rem auto;
+}
+.form-group {
+  display: block;
+}
+label {
+  font-family: park-lane, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.25rem;
+  display: block;
+  margin-bottom: 0.5em;
+  margin-top: 2em;
+}
+input,
+textarea {
+  color: #6df9d6;
+  font-family: park-lane, serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1rem;
+  border-radius: 0px;
+  width: 90%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #6df9d6;
+  padding: 1em 1em 1em 0.25em;
+}
+textarea {
+  padding-bottom: 0em;
+}
+
+button {
+  font-family: park-lane, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 2.5em;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  padding: 0.75em 1em 0.75em 0.7em;
+  text-align: center;
+  background-color: #6df9d6;
+  border: 2px solid #6df9d6;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+button:hover {
+  border-radius: 28px;
+  border: 2px solid #6df9d6;
+  background-color: #533f44;
+  color: #6df9d6;
+}
+footer {
+  background-color: #6df9d6;
+}
+@media screen and (min-width: 48em) {
+  h1 {
+    font-size: 3rem;
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+}
+
+#toast {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #toast.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }

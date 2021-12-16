@@ -12,11 +12,10 @@ require("dotenv").config();
 
 const userRouter = require('./userRoutes');
 
-
-
 // Middlewares
 app.use(morgan("tiny"));
 app.use(helmet());
+
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
