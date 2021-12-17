@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Time Capsule Emailer</title>
+    <title>Email Time Capsule </title>
   </head>
   <body>
     <nav>
@@ -42,19 +42,22 @@
           </div>
       </div>
       <button type="submit">Submit future message</button>
+      <!-- <button id="tryButton">TRY</button> -->
 
     </form>
     <div class="spinner-container" id="spinner">
+
       <img id="spinner-image" src="spinner.gif" alt="loading image"/>
     </div>
-    </main>
-    <!-- <section class="container section">
-      <h2>Expect an email like this one!</h2>
-      <button class="toast-button" onclick="toast()">Toast</button>
 
+    </main>
+    <section class="container section">
+      <h2>Expect an email like this one!</h2>
+      <img class="email-image" src="/email-example.png" alt="screenshot of an email from a user named Time Capsule with the subject of: this is your time capsule message" />
+      <small>*Emails get sent every day at around 12:00am</small>
+      
     </section>
 
-    -->
     <footer>
       <div class="footer">
          <div class="brand">
@@ -70,8 +73,8 @@
       </div>
        </div>
      </footer>
-    <div id="toast">Your message will be sent in the future!</div> 
-
+     <div id="toast">Your message will be sent in the future!</div> 
+    </div>
   </body>
   <script src="main.js"></script>
 </html>

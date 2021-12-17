@@ -1,10 +1,32 @@
 const form = document.getElementById("form");
 const toast = document.getElementById("toast");
 const spinner = document.getElementById("spinner")
-
+const tryButton = document.getElementById("tryButton")
 const API_URL = "https://emailcapsule.herokuapp.com/";
+
 spinner.style.display = 'none';
-//   setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+toast.style.display = 'none';
+
+// debug submit 
+tryButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+
+    spinner.style.display = '';
+    toast.style.display = '';
+
+    setTimeout(() => {
+        spinner.style.display = 'none';
+        form.style.display = '';
+
+    }, 1000);
+    setTimeout(() => {
+        // 2800ms so it works with animation
+        toast.style.display = 'none';
+    }, 2800);
+    form.reset();
+
+})
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -23,19 +45,25 @@ form.addEventListener('submit', (event) => {
     form.style.display = 'none';
 
     spinner.style.display = '';
+    toast.style.display = '';
+
     setTimeout(() => {
         spinner.style.display = 'none';
         form.style.display = '';
 
     }, 1000);
-        toast.className = 'show';
+    setTimeout(() => {
+        // 2800ms so it works with animation
+        toast.style.display = 'none';
+    }, 2800);
 
-    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 4000);
+
     fetch(API_URL, {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
             'content-type': 'application/json'
-        }
+        }.then
     })
+    form.reset();
 });
