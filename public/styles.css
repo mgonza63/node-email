@@ -1,3 +1,9 @@
+:root {
+  --color-secondary: #eefffb;
+  --color-primary: #140408;
+  --button-primary: #3ee74c;
+
+}
 @font-face {
   src: url(./fonts/roc.ttf);
   font-family: "Roc";
@@ -10,21 +16,22 @@
   src: url(./fonts/lane-light.ttf);
   font-family: "lane-light";
 }
+
 body {
-  color: #6df9d6;
-  background-color: #533f44;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
   margin: 0;
 }
 li {
   list-style: none;
 }
 nav {
-  background-color: #6df9d6;
+  background-color: var(--color-primary);
   padding: 0;
   margin: 0;
 }
 a {
-  color: #533f44;
+  color: var(--color-secondary);
   text-decoration: none;
 }
 a:hover {
@@ -45,24 +52,27 @@ main {
   margin-bottom: 6em;
 }
 .brand {
-  font-family: roc, sans-serif;
+  font-family: lane, sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: #533f44;
+  color: var(--color-secondary);
   font-size: 1.5rem;
 }
 .margin-left {
   margin-left: auto;
 }
 .nav-item {
-  color: #533f44;
-  font-family: roc, sans-serif;
+  color: var(--color-secondary);
+  font-family: lane-light, sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
 }
+.github {
+  fill: var(--color-secondary);
+}
 h1,
 h2 {
-  font-family: roc, sans-serif;
+  font-family: lane, sans-serif;
   font-weight: 600;
   font-style: normal;
 }
@@ -94,7 +104,7 @@ label {
 }
 input,
 textarea {
-  color: #6df9d6;
+  color: var(--color-primary);
   font-family: lane-light, serif;
   font-style: normal;
   font-size: 1rem;
@@ -102,7 +112,7 @@ textarea {
   width: 90%;
   background: none;
   border: none;
-  border-bottom: 1px solid #6df9d6;
+  border-bottom: 1px solid var(--color-primary);
   padding: 1em 1em 1em 0.25em;
 }
 textarea {
@@ -119,21 +129,29 @@ button {
   border-radius: 3px;
   padding: 0.75em 1em 0.75em 0.7em;
   text-align: center;
-  background-color: #11d463;
-  color: #533f44;
+  background-color: var(--button-primary);
+  color: var(--color-primary);
 
-  border: 2px solid #11d463;
+  border: 2px solid var(--button-primary);
   transition: all 200ms ease-out;
   cursor: pointer;
 }
 button:hover {
   border-radius: 28px;
-  border: 2px solid #6df9d6;
-  background-color: #533f44;
-  color: #6df9d6;
+  border: 2px solid var(--button-primary);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 footer {
-  background-color: #6df9d6;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-top: 1em;
+}
+.link {
+  padding: .5em 0;
 }
 @media screen and (min-width: 48em) {
   h1 {
