@@ -8,25 +8,25 @@ spinner.style.display = 'none';
 toast.style.display = 'none';
 
 // debug submit 
-tryButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    form.style.display = 'none';
+// tryButton.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     form.style.display = 'none';
 
-    spinner.style.display = '';
-    toast.style.display = '';
+//     spinner.style.display = '';
+//     toast.style.display = '';
 
-    setTimeout(() => {
-        spinner.style.display = 'none';
-        form.style.display = '';
+//     setTimeout(() => {
+//         spinner.style.display = 'none';
+//         form.style.display = '';
 
-    }, 1000);
-    setTimeout(() => {
-        // 2800ms so it works with animation
-        toast.style.display = 'none';
-    }, 2800);
-    form.reset();
+//     }, 1000);
+//     setTimeout(() => {
+//         // 2800ms so it works with animation
+//         toast.style.display = 'none';
+//     }, 2800);
+//     form.reset();
 
-})
+// })
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
