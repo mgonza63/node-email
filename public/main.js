@@ -4,6 +4,23 @@ const spinner = document.getElementById("spinner")
 const tryButton = document.getElementById("tryButton")
 const API_URL = "https://emailcapsule.herokuapp.com/";
 
+// setting min date for input field
+let minDate = new Date();
+let dd = minDate.getDate() + 1;
+let mm = minDate.getMonth() + 1; // january is 0 
+let yyyy = minDate.getFullYear();
+
+if (dd < 10) {
+   dd = '0' + dd;
+}
+
+if (mm < 10) {
+   mm = '0' + mm;
+} 
+    
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("sendDate").setAttribute("min", today);
+
 spinner.style.display = 'none';
 toast.style.display = 'none';
 
@@ -35,11 +52,12 @@ form.addEventListener('submit', (event) => {
     const email = formData.get('email');
     const message = formData.get('message');
     const numberOfDays = formData.get('numberOfDays');
+    const sendDate = formData.get('sendDate');
 
     const user = {
         email,
         message,
-        numberOfDays
+        sendDate
     }
     console.log(user);
     form.style.display = 'none';
@@ -63,7 +81,7 @@ form.addEventListener('submit', (event) => {
         body: JSON.stringify(user),
         headers: {
             'content-type': 'application/json'
-        }.then
+        }
     })
     form.reset();
 });

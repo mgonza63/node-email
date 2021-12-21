@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { DateTime } = require("luxon");
+
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -11,8 +11,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  sendDate: {
+    type: Date,
+    required: true,
+    maxLength: 10,
+  },
   createdAt: {type: Date, default: Date.now() },
-  numberOfDays:{type: String}
+
 });
 
 
