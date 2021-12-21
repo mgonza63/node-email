@@ -22,11 +22,8 @@ app.post("/", async (req, res) => {
     email: req.body.email,
     message: req.body.message,
     sendDate: req.body.sendDate,
-    // numberOfDays: DateTime.now()
-    //   .plus({ days: req.body.numberOfDays })
-    //   .toISODate(),
+
   });
-  console.log(user);
 
   try {
     await user.save();

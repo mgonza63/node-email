@@ -213,7 +213,26 @@ footer {
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
+#errorToast {
+  font-family: lane-light;
+  min-width: 250px; 
+  background-color: rgb(216, 140, 140); 
+  border: rgb(206, 48, 48) solid 2px;
+  color: var(--color-primary); 
+  text-align: center; 
+  border-radius: 3px; 
+  padding: 1em;
+  position: fixed;
+
+  top: 4em;
+  right: 50%;
+  transform: translateX(50%);
+  display: grid;
+  place-items: center;
   
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+} 
   
   @-webkit-keyframes fadein {
     from {top: 0; opacity: 0;}

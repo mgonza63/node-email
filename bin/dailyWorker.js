@@ -48,7 +48,6 @@ let startOfToday = new Date(new Date(today).setUTCHours(00, 00, 00));
 let endOfDay = new Date(new Date(today).setUTCHours(23, 59, 59));
     try {
     const userMessageDue = await userModel.find({ sendDate:{ $gte: startOfToday, $lt: endOfDay } }).exec();
-    console.log(startOfToday, endOfDay);
     if (userMessageDue.length != 0) {
         userMessageDue.forEach((userObject) => {
           const userEmail = userObject.email;

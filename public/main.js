@@ -1,6 +1,7 @@
 const form = document.getElementById("form");
 const toast = document.getElementById("toast");
-const spinner = document.getElementById("spinner")
+const errorToast = document.getElementById("errorToast");
+const spinner = document.getElementById("spinner");
 const tryButton = document.getElementById("tryButton")
 const API_URL = "https://emailcapsule.herokuapp.com/";
 
@@ -23,6 +24,9 @@ document.getElementById("sendDate").setAttribute("min", today);
 
 spinner.style.display = 'none';
 toast.style.display = 'none';
+
+errorToast.style.display = 'none';
+
 
 // debug submit 
 // tryButton.addEventListener('click', (e) => {
@@ -51,7 +55,6 @@ form.addEventListener('submit', (event) => {
 
     const email = formData.get('email');
     const message = formData.get('message');
-    const numberOfDays = formData.get('numberOfDays');
     const sendDate = formData.get('sendDate');
 
     const user = {
@@ -65,16 +68,6 @@ form.addEventListener('submit', (event) => {
     spinner.style.display = '';
     toast.style.display = '';
 
-    setTimeout(() => {
-        spinner.style.display = 'none';
-        form.style.display = '';
-
-    }, 1000);
-    setTimeout(() => {
-        // 2800ms so it works with animation
-        toast.style.display = 'none';
-    }, 2800);
-
 
     fetch(API_URL, {
         method: 'POST',
@@ -82,6 +75,32 @@ form.addEventListener('submit', (event) => {
         headers: {
             'content-type': 'application/json'
         }
+
+    }).then(res => {
+        res.json();
+
+        if (res.status === 201) {
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                form.style.display = '';
+                
+            }, 1000);
+            setTimeout(() => {
+                // 2800ms so it works with animation
+                toast.style.display = 'none';
+            }, 2800);
+        } else {
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                form.style.display = '';
+        
+            }, 1000);
+            setTimeout(() => {
+                // 2800ms so it works with animation
+                errorToast.style.display = 'none';
+            }, 2900);
+        }
     })
+
     form.reset();
 });
