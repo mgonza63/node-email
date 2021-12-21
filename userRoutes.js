@@ -6,11 +6,9 @@ require("dotenv").config();
 
 app.get("/users", async (req, res) => {
   const users = await userModel.find({});
-
-
   try {
     // Insomnia test
-    res.send(users);
+    // res.send(users);
     
   } catch (error) {
     res.status(500).send(error);
