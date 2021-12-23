@@ -11,7 +11,7 @@ require("dotenv").config();
 
 const userRouter = require('./userRoutes');
 const userModel = require("./userModel");
-
+const dailyWorker = require('./bin/dailyWorker')
 const nodemailer = require("nodemailer");
 const https = require('https');
 const http = require('http');
