@@ -41,6 +41,10 @@ img {
   width: fit-content;
   height: auto;
 }
+small {
+  color: var(--color-primary);
+  font-family: lane-light;
+}
 main {
   min-height: 80vh;
 }
